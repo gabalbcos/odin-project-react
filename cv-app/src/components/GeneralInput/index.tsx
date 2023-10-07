@@ -33,22 +33,29 @@ const resetForm = (e: React.FormEvent<HTMLFormElement>) => {
 
   return(
   <form className={styles.form} onSubmit={handleSubmit}>
-    <button onClick={resetForm}>Reset</button>
-      <label>
-          Name:
-        <input 
-        type="text" 
-        placeholder="Your name" 
-        value={formValues.name}
-        onChange={handleInputChange}
-        name="name"
-        id="name"
-        required
-        />
-        </label>
-        <label>
+    
+      <div className={styles.form__field}>
+        <label
+        className={styles.form__label}>
+            Name:
+          <input
+          className={styles.form__input}
+          type="text"
+          placeholder="Your name"
+          value={formValues.name}
+          onChange={handleInputChange}
+          name="name"
+          id="name"
+          required
+          />
+          </label>
+      </div>
+      <div className={styles.form__field}>
+        <label
+        className={styles.form__label}>
           E-mail:
-        <input 
+        <input
+        className={styles.form__input}
         type="mail" 
         placeholder="Your e-mail"
         value={formValues.email}
@@ -57,9 +64,13 @@ const resetForm = (e: React.FormEvent<HTMLFormElement>) => {
         required
         />
         </label>
-        <label>
+        </div>
+        <div className={styles.form__field}>
+        <label
+        className={styles.form__label}>
           Phone:
-        <input 
+        <input
+        className={styles.form__input}
         type="number" placeholder="Your phone"
         value={formValues.phone}
         onChange={handleInputChange}f
@@ -67,7 +78,11 @@ const resetForm = (e: React.FormEvent<HTMLFormElement>) => {
         required
         />
         </label>
-        <input type="submit" value="Submit" />
+        </div>
+        <div className={styles.form__buttons}>
+          <button onClick={resetForm} className={styles.form__button}>Reset</button>
+          <input type="submit" value="Submit" />
+        </div>
 
   </form>
   );

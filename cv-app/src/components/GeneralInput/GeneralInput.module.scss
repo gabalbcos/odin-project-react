@@ -1,9 +1,36 @@
 .form {
   display: flex;
   flex-direction: column;
+  width: 25vw;
+  border: 2px solid green;
+  padding: 2em 0 2em 2em;
 }
 
 .form button {
-  width: 20%;
-  justify-self: end;
+  width: 5em;
+}
+
+.form__field {
+  display: flex;
+  padding: .5em;
+  
+
+}
+
+.form__label, .form__input {
+  display: block;
+}
+.form__input {
+  height: 2em;
+  width: 22vw;
+  margin: 8px 0;
+  flex: 1;
+}
+
+
+
+.form__buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center ;
 }
