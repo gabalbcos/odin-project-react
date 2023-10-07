@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { createGlobalStyle } from 'styled-components';
+import GeneralInput from './components/GeneralInput';
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  #root {
     display: flex;
-    margin: 3em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
   }
   h1{
     color: red;
@@ -17,7 +17,8 @@ function App() {
   return (
     <>
       <GlobalStyle/>
-        <h1>PUM</h1>
+      <GeneralInput />
+      <GeneralInput />
     </>
   )
 }
