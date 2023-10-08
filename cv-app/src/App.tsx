@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { createGlobalStyle } from 'styled-components';
 import GeneralInput from './components/GeneralInput';
 
@@ -7,8 +6,9 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
 
   }
-  h1{
-    color: red;
+
+  body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 `;
 function App() {

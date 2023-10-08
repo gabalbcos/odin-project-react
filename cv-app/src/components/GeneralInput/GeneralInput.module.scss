@@ -6,10 +6,6 @@
   padding: 2em 0 2em 2em;
 }
 
-.form button {
-  width: 5em;
-}
-
 .form__field {
   display: flex;
   padding: .5em;
@@ -20,17 +16,34 @@
 .form__label, .form__input {
   display: block;
 }
+
 .form__input {
   height: 2em;
   width: 22vw;
   margin: 8px 0;
   flex: 1;
+  border-radius: 10px;
+  padding-left: 10px; 
 }
 
+.form__label {
+ font-weight: 700;
+ font-size: 1.2em;
+}
 
 
 .form__buttons {
   display: flex;
   justify-content: flex-start;
   align-items: center ;
+}
+
+.form__submit, .form__button {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 5px;
+  width: 5em;
+  height: 3em;
+  text-align: center;
+  font-weight: 600;
 }

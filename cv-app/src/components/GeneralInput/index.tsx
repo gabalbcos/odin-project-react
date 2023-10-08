@@ -81,7 +81,7 @@ const resetForm = (e: React.FormEvent<HTMLFormElement>) => {
         </div>
         <div className={styles.form__buttons}>
           <button onClick={resetForm} className={styles.form__button}>Reset</button>
-          <input type="submit" value="Submit" />
+          <input className={styles.form__submit} type="submit" value="Submit" />
         </div>
 
   </form>
