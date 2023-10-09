@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 function Education () {
-  const [formValues, setFormValues] = useState({name: "", email: "", phone:""});  
-
+  const [formValues, setFormValues] = useState({schoolName: "", area: "", type:"", startDate: "", endDate:""});  
+  
   const handleInputChange = (e: React.FormEvent<HTMLFormElement>) => {
     const { name, value } = e.target;
     setFormValues({
