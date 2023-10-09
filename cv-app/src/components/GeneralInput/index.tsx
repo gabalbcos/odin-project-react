@@ -1,9 +1,19 @@
 import { useState } from "react";
 import styles from "./GeneralInput.module.scss";
 
-function GeneralInput () {
+function GeneralInput ({setGeneralInfo, GeneralInfo}) {
 const [formValues, setFormValues] = useState({name: "", email: "", phone:""});  
-const [GeneralInfo, setGeneralInfo] = useState({name: null, email: null, phone:null});  
+let presentInfo = GeneralInfo;
+
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setGeneralInfo({
+    name: formValues.name,
+    email: formValues.email,
+    phone: formValues.phone
+  });
+  console.log(presentInfo);
+};
 
 const handleInputChange = (e: React.FormEvent<HTMLFormElement>) => {
   const { name, value } = e.target;
@@ -14,22 +24,11 @@ const handleInputChange = (e: React.FormEvent<HTMLFormElement>) => {
   console.log(formValues);
 };
 
-// saving the data on GeneralInfo
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setGeneralInfo({
-    name: formValues.name,
-    email: formValues.email,
-    phone: formValues.phone
-  });
-  console.log(GeneralInfo);
-};
 const resetForm = (e: React.FormEvent<HTMLFormElement>) => {
   setFormValues({name: "", email: "", phone: ""});
  
   console.log(formValues);
 };
-
 
   return(
   <form className={styles.form} onSubmit={handleSubmit}>

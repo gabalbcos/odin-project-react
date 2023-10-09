@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import GeneralInput from './components/GeneralInput';
-
+import { useState } from 'react';
 const GlobalStyle = createGlobalStyle`
   #root {
     display: flex;
@@ -12,12 +12,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 function App() {
-
+  const [GeneralInfo, setGeneralInfo] = useState({name: null, email: null, phone:null}); 
   return (
     <>
       <GlobalStyle/>
-      <GeneralInput />
-      <GeneralInput />
+      <GeneralInput setGeneralInfo={setGeneralInfo} GeneralInfo={GeneralInfo}/>
+      <GeneralInput setGeneralInfo={setGeneralInfo} GeneralInfo={GeneralInfo}/>
     </>
   )
 }
