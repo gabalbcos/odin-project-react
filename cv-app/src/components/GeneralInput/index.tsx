@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styles from "./GeneralInput.module.scss";
 
 function GeneralInput ({setGeneralInfo, GeneralInfo}) {
 const [formValues, setFormValues] = useState({name: "", email: "", phone:""});  
@@ -31,59 +30,64 @@ const resetForm = (e: React.FormEvent<HTMLFormElement>) => {
 };
 
   return(
-  <form className={styles.form} onSubmit={handleSubmit}>
+  <div className="">
+    <h3>Personal Info:</h3>
+    <form  onSubmit={handleSubmit}>
     
-      <div className={styles.form__field}>
-        <label
-        className={styles.form__label}>
-            Name:
+        <div >
+          <label
+          >
+              Name:
+            <input
+            type="text"
+            placeholder="Your name"
+            value={formValues.name}
+            onChange={handleInputChange}
+            name="name"
+            id="name"
+            required
+            />
+            </label>
+        </div>
+        <div className="row">
+          <label
+          className="">
+            E-mail:
           <input
-          className={styles.form__input}
-          type="text"
-          placeholder="Your name"
-          value={formValues.name}
+          className=""
+          type="mail"
+          placeholder="Your e-mail"
+          value={formValues.email}
           onChange={handleInputChange}
-          name="name"
-          id="name"
+          name="email"
           required
           />
           </label>
-      </div>
-      <div className={styles.form__field}>
-        <label
-        className={styles.form__label}>
-          E-mail:
-        <input
-        className={styles.form__input}
-        type="mail" 
-        placeholder="Your e-mail"
-        value={formValues.email}
-        onChange={handleInputChange}
-        name="email"
-        required
-        />
-        </label>
-        </div>
-        <div className={styles.form__field}>
-        <label
-        className={styles.form__label}>
-          Phone:
-        <input
-        className={styles.form__input}
-        type="number" placeholder="Your phone"
-        value={formValues.phone}
-        onChange={handleInputChange}f
-        name="phone"
-        required
-        />
-        </label>
-        </div>
-        <div className={styles.form__buttons}>
-          <button onClick={resetForm} className={styles.form__button}>Reset</button>
-          <input className={styles.form__submit} type="submit" value="Submit" />
-        </div>
-
-  </form>
+          </div>
+          <div className="">
+          <label
+          className="" >
+            Phone:
+          <input
+          className=""
+          type="number" placeholder="Your phone"
+          value={formValues.phone}
+          onChange={handleInputChange}f
+          name="phone"
+          required
+          />
+          </label>
+          </div>
+          <div className="row ">
+            <div className="col-md-6 ">
+               <button className="btn btn-delete " onClick={resetForm}>Reset</button>
+            </div>
+            <div className="col-md-6">
+               <input className="btn btn-info" type="submit" value="Submit" />
+            </div>
+          </div>
+    </form>
+  </div>
   );
 }
 
